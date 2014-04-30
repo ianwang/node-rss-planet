@@ -3,11 +3,30 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  .row 
+    .columns
+      h3 New Feeds
+      hr
+      for blog in data
+        p=blog.meta.title
+        ul.site
+          for post in blog.posts
+            li
+              .post
+                .head
+                  a(href=post.link).title=post.title
+                  .info
+                    span.pubDate=post.pubDate
+                    a(href='').author=post.author
+              .content
+                !{post.summary}
+    .columns
+      h3 Sites
+      for blog in data
+        ul
+          li
+            a(href=blog.meta.link)=blog.meta.title
 
-  h4 Blog Posts
-  hr
-  for blog in data
-    p=blog.meta.title
-    ul.site
-      for post in blog.posts
-        li=post
+
+    
+

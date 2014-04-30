@@ -11,7 +11,7 @@ exports.index = function(req, res){
   console.log('source', source);
   fetchRSS(source, function(data) {
     
-    console.log('raw', data);
+    console.log('raw', data[0].posts);
 
     res.render('index', { 
       title: 'Node.js RSS Planet',
@@ -53,17 +53,25 @@ function fetchRSS(feeds, cb) {
     });
 
     feedparser.on('error', function(error) {
-        // always handle errors
+      finish(error);
     });
 
     feedparser.on('readable', function() {
 
       var stream = this,
           meta = this.meta,
-          item;
+          item = stream.read();
 
-      item = stream.read();
-      items.push(item.title);
+      var content = {
+        title: item.title,
+        summary: item.summary,
+        pubDate: item.pubDate,
+        link: item.link,
+        author: item.author,
+        categories: item.categories
+      };
+
+      items.push(content);
       thisBlog.meta = meta;
 
     });

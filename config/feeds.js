@@ -1,7 +1,7 @@
 
 var blogs = [
   'http://feeds.feedburner.com/TechCrunch',
-  'https://news.ycombinator.com/rss'
+  'http://feeds.mashable.com/Mashable'
 ];
 
 module.exports = blogs;
