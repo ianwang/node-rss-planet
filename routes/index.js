@@ -15,7 +15,6 @@ exports.index = function(req, res){
     console.log('raw', data[0].posts);
 
     res.render('index', { 
-      title: 'Node.js RSS Planet',
       data: data
     });
 

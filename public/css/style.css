@@ -1,13 +1,27 @@
+ul {
+  list-style: none;
+}
+
 .container {
   width: 100%;
-  padding-top: 30px; 
+}
+
+.topbar {
+  background: #DA7758;
+}
+.topbar h1 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  padding: 0.2em;
+  margin-bottom: 1em;
 }
 
 ul.posts {
   list-style: none;
   margin-left: 0;
 }
-
 .post {
   margin-bottom: 1.5em;
   border-bottom: 1px solid #DDDDDD;
