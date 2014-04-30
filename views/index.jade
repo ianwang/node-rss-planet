@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h4 Blog Posts
+  hr
+  for blog in data
+    p=blog.meta.title
+    ul.site
+      for post in blog.posts
+        li=post
