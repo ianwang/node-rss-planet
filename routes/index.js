@@ -2,6 +2,7 @@
 var FeedParser = require('feedparser'),
     async      = require('async'),
     request    = require('request'),
+    moment     = require('moment'),
     sites      = require('../config/feeds.js');
 
 exports.index = function(req, res){
@@ -65,7 +66,7 @@ function fetchRSS(feeds, cb) {
       var content = {
         title: item.title,
         summary: item.summary,
-        pubDate: item.pubDate,
+        pubDate: moment(item.pubDate).format('lll'),
         link: item.link,
         author: item.author,
         categories: item.categories

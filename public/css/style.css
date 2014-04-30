@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  padding-top: 30px; 
+}
+
+ul.posts {
+  list-style: none;
+  margin-left: 0;
+}
+
+.post {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #DDDDDD;
+}
+.post .head .info {
+  font-size: 0.8rem;
+  color: #6f6f6f;
+}
+.post .content {
+  font-family: "Lato",Georgia,Cambria,"Times New Roman",Times,serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #444;
+}
+.post .content > img:first-child {
+  width: 60%;
+  display: block;
+  margin: 20px auto;
+}

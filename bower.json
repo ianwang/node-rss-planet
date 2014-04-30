@@ -1,0 +1,27 @@
+{
+  "name": "node-rss-planet",
+  "version": "0.0.1",
+  "homepage": "https://github.com/IanWang/node-rss-planet",
+  "authors": [
+    "Ian Wang <gogoenwon@gmail.com>"
+  ],
+  "description": "RSS Feed Aggregator on NodeJS",
+  "main": "app.js",
+  "keywords": [
+    "rss",
+    "planet",
+    "feeds",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.2.2"
+  }
+}

@@ -1,32 +1,34 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  .row 
-    .columns
-      h3 New Feeds
-      hr
-      for blog in data
-        p=blog.meta.title
-        ul.site
-          for post in blog.posts
+  .container
+    .row 
+      .columns.medium-9.small-12
+        h2 New Feeds
+        hr
+        for blog in data
+          ul.posts
+            for post in blog.posts
+              li
+                .post
+                  .head
+                    h4
+                      a(href=post.link, target='_blank').title=post.title
+                    .info.clearfix
+                      span.pubDate=post.pubDate
+                      span.author.right
+                        | Author 
+                        a(href='')=post.author
+                  .content
+                    !{post.summary}
+
+      .columns.medium-3.small-12
+        h2 Sites
+        for blog in data
+          ul
             li
-              .post
-                .head
-                  a(href=post.link).title=post.title
-                  .info
-                    span.pubDate=post.pubDate
-                    a(href='').author=post.author
-              .content
-                !{post.summary}
-    .columns
-      h3 Sites
-      for blog in data
-        ul
-          li
-            a(href=blog.meta.link)=blog.meta.title
+              a(href=blog.meta.link, target='_blank')=blog.meta.title
 
 
-    
+      
 
