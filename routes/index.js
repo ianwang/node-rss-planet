@@ -9,10 +9,9 @@ exports.index = function(req, res){
 
   var source = sites;
 
-  console.log('source', source);
   fetchRSS(source, function(data) {
     
-    console.log('raw', data[0].posts);
+    //console.log('raw', data[0].posts);
 
     res.render('index', { 
       data: data
